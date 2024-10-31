@@ -37,10 +37,10 @@ function Contact() {
 
     // Send the email using EmailJS
     emailjs.send(
-      'service_xrhf5is',
-      'template_w8mabh9',
+      'service_p6o08xn',
+      'template_4gdo26c',
       formData,
-      'r70TRxStUzHTX6iiE'
+      'GW_cG8akOncHt1Rs_'
     )  
     .then((response) => {
       console.log('Message sent successfully!', response.status, response.text);
@@ -134,7 +134,7 @@ function Contact() {
 
         {/* Email */}
         <a 
-          href="mailto:benjaminkaitany05@gmail.com" 
+          href="mailto:lesuniquepallets@gmail.com" 
           target="_blank" 
           rel="noopener noreferrer" 
           aria-label="Email">
