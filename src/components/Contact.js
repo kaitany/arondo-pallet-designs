@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import emailjs from 'emailjs-com'; 
+import React, { useState } from 'react'; // Importing React and useState correctly
+import emailjs from 'emailjs-com';       // Importing emailjs correctly
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faTiktok, faFacebook, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -11,9 +12,8 @@ function Contact() {
     message: ''
   });
   const [successMessage, setSuccessMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState(''); // State for error message
+  const [errorMessage, setErrorMessage] = useState(''); 
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -22,20 +22,16 @@ function Contact() {
     });
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       setErrorMessage('All fields are required.');
       return;
     }
 
-    // Clear any previous error message
     setErrorMessage('');
 
-    // Send the email using EmailJS
     emailjs.send(
       'service_p6o08xn',
       'template_4gdo26c',
@@ -95,17 +91,24 @@ function Contact() {
         </button>
       </form>
 
-      {/* Error and Success Messages */}
       {errorMessage && (
         <p className="mt-4 text-center text-red-600">{errorMessage}</p>
       )}
       {successMessage && (
         <p className="mt-4 text-center text-green-600">{successMessage}</p>
       )}
-      
-      {/* Social Media Links */}
-      <div className="mt-6 flex justify-center space-x-4">
-        {/* Facebook */}
+
+      {/* Direct Contact Section */}
+      <div className="mt-8 text-center">
+        <h3 className="text-lg font-semibold">Reach Us Directly:</h3>
+        <p className="text-gray-800 mt-2">
+          <FontAwesomeIcon icon={faPhone} className="mr-2" /> +254 791 298 360
+        </p>
+      </div>
+
+      {/* Social Media Links Section */}
+      <h3 className="text-lg font-semibold mt-8 mb-4 text-center">Connect with us on social media:</h3>
+      <div className="mt-4 flex justify-center space-x-4">
         <a 
           href="https://www.facebook.com/profile.php?id=61565205017649" 
           target="_blank" 
@@ -114,7 +117,6 @@ function Contact() {
           <FontAwesomeIcon icon={faFacebook} size="2x" className="text-blue-600 hover:text-blue-800" />
         </a>
         
-        {/* LinkedIn */}
         <a 
           href="https://www.linkedin.com/in/alvin-leslie-arondo-115503191" 
           target="_blank" 
@@ -123,7 +125,6 @@ function Contact() {
           <FontAwesomeIcon icon={faLinkedin} size="2x" className="text-blue-700 hover:text-blue-900" />
         </a>
 
-        {/* WhatsApp */}
         <a 
           href="https://wa.me/254791298360"
           target="_blank" 
@@ -132,15 +133,14 @@ function Contact() {
           <FontAwesomeIcon icon={faWhatsapp} size="2x" className="text-green-600 hover:text-green-800" />
         </a>
 
-          {/* TikTok */}
         <a 
-          href="https://www.tiktok.com/@les_unique_pallets?_t=8r2BWx5HkE1&_r=1" 
+          href="https://www.tiktok.com/@les_unique_pallets" 
           target="_blank" 
-          rel="noopener noreferrer">
+          rel="noopener noreferrer" 
+          aria-label="TikTok">
           <FontAwesomeIcon icon={faTiktok} size="2x" />
         </a>
 
-        {/* Email */}
         <a 
           href="mailto:lesuniquepallets@gmail.com" 
           target="_blank" 
