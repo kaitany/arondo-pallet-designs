@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faTiktok, faFacebook, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -130,6 +130,14 @@ function Contact() {
           rel="noopener noreferrer" 
           aria-label="WhatsApp">
           <FontAwesomeIcon icon={faWhatsapp} size="2x" className="text-green-600 hover:text-green-800" />
+        </a>
+
+          {/* TikTok */}
+        <a 
+          href="https://www.tiktok.com/@les_unique_pallets?_t=8r2BWx5HkE1&_r=1" 
+          target="_blank" 
+          rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faTiktok} size="2x" />
         </a>
 
         {/* Email */}
