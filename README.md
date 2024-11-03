@@ -29,4 +29,8 @@ To run this project locally:
    npm install
 4. Start the development server:
    ```bash
-   npm start 
+   npm start
+
+**Developer**
+
+*Benjamin Kaitany*
